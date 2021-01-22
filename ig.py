@@ -1,5 +1,6 @@
 import requests
 import re
+import logging
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:84.0) Gecko/20100101 Firefox/84.0'}
@@ -15,6 +16,9 @@ def node_extractor(node):
 
 def scrape_post(shortcode):
     response = requests.get(BASE_URL.format(shortcode), headers=headers)
+    logging.exception('request headers {}'.format(response.request.headers))
+    print('\nwait..\n')
+    logging.exception('response headers {}'.format(response.headers))
     response.raise_for_status()
     data = response.json()
     with open('debug.html', 'w') as f:

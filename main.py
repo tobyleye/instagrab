@@ -35,4 +35,5 @@ def server_error(e):
         See logs for full stacktrace.
         """.format(e), 500
 
-
+if __name__ == "__main__":
+    app.run(debug=True)
