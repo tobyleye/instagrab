@@ -16,6 +16,7 @@ def node_extractor(node):
 
 def scrape_post(shortcode):
     response = requests.get(BASE_URL.format(shortcode), headers=headers)
+    print(response.text + '\n')
     logging.exception('request headers {}'.format(response.request.headers))
     print('\nwait..\n')
     logging.exception('response headers {}'.format(response.headers))
