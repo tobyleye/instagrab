@@ -1,0 +1,6 @@
+env
+__pycache__/
+*.yaml
+*.sh
+.DS_Store
+.gcloudignore
